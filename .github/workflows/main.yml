@@ -1,22 +1,16 @@
 
-name: CI
+name: Django-app workflow
 
-on:
-  push:
-    branches: [master]
-  pull_request:
-    branches: [master]
+on: [push]
 
 jobs:
-  build:
+  tests:
     runs-on: ubuntu-latest
+
     steps:
-
     - uses: actions/checkout@v2
-
-    - name: Run a one-line script
-      run: echo Hellow, world!
-
-    - name: Run a multy-line script
-      run: echo Hellow, world!
-      run: echo test and deploy your project
+    - name: Set up Python
+      run: echo Test
+      # uses: actions/setup-python@v2
+      # with:
+      #   python-version: 3.7
